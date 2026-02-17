@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Attendance System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- LOGIN PAGE -->
+  <div id="loginSection" class="card">
+    <h2>Login</h2>
+
+    <input type="text" id="loginUsername" placeholder="Username">
+    <input type="password" id="loginPassword" placeholder="Password">
+
+    <select id="loginRole">
+      <option value="employee">Employee</option>
+      <option value="manager">Manager</option>
+    </select>
+
+    <button onclick="login()">Login</button>
+
+    <p style="text-align:center;">
+      New user?
+      <a href="#" onclick="showRegister()">Register here</a>
+    </p>
+  </div>
+
+  <!-- REGISTER PAGE -->
+  <div id="registerSection" class="card hidden">
+    <h2>Register</h2>
+
+    <input type="text" id="regName" placeholder="Full Name">
+    <input type="text" id="regUsername" placeholder="Username">
+    <input type="password" id="regPassword" placeholder="Password">
+
+    <select id="regRole">
+      <option value="employee">Employee</option>
+      <option value="manager">Manager</option>
+    </select>
+
+    <button onclick="registerUser()">Register</button>
+
+    <p style="text-align:center;">
+      Already have account?
+      <a href="#" onclick="showLogin()">Back to Login</a>
+    </p>
+  </div>
+
+  <!-- Employee Dashboard -->
+  <div id="employeeDashboard" class="card hidden">
+    <h2>Employee Dashboard</h2>
+
+    <div class="actions">
+      <button onclick="checkIn()">Check In</button>
+      <button onclick="checkOut()">Check Out</button>
+      <button onclick="logout()">Logout</button>
+    </div>
+
+    <h3>My Attendance</h3>
+    <table id="employeeTable">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Check In</th>
+          <th>Check Out</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- Manager Dashboard -->
+  <div id="managerDashboard" class="card hidden">
+    <h2>Manager Dashboard</h2>
+
+    <button onclick="logout()">Logout</button>
+
+    <h3>Team Attendance</h3>
+    <table id="managerTable">
+      <thead>
+        <tr>
+          <th>Employee</th>
+          <th>Date</th>
+          <th>Check In</th>
+          <th>Check Out</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
